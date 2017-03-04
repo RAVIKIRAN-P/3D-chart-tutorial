@@ -54,7 +54,7 @@
       scene = new THREE.Scene();
 
       camera = new THREE.PerspectiveCamera(90, 1, 0.001, 700);
-      camera.position.set(0, 15, 10);
+      camera.position.set(0, 15, 30);
       scene.add(camera);
 
       controls = new THREE.OrbitControls(camera, element);
@@ -178,6 +178,24 @@
 	  d.all = +d.all;
 	  d.male = +d.male;
 	  d.female = +d.female;
+	/*  
+	  d.CommunityAreaName = +d.CommunityAreaName;
+	  d.CommunityAreaNumber = +d.CommunityAreaNumber;
+	  d.PropertyType = +d.PropertyType;
+	  d.PropertyName = +d.PropertyName;
+	  d.Address = +d.Address;
+	  d.ZipCode = +d.ZipCode;
+	  d.PhoneNumber = +d.PhoneNumber;
+	  d.ManagementCompany = +d.ManagementCompany;
+	  d.Units = +d.Units;
+	  d.XCoordinate = +d.XCoordinate;
+	  d.YCoordinate = +d.YCoordinate;
+	  d.Latitude = +d.Latitude;
+	  d.Longitude = +d.Longitude;
+	  d.Location = +d.Location;
+	  */
+	 // CommunityAreaName,aCommunityAreaNumberll,PropertyType,PropertyName,Address,ZipCode,PhoneNumber,ManagementCompany,Units,XCoordinate,YCoordinate,Latitude,Longitude,Location
+
 	  return d;
 	}
 	var title = createType({text: "U.S. Population By Age, January 2000 in millions"});
@@ -207,7 +225,7 @@
       camera.aspect = width / height;
       camera.updateProjectionMatrix();
 
-//      renderer.setSize(width, height);
+     renderer.setSize(width, height);
    effect.setSize(width, height);
     }
 
@@ -221,6 +239,7 @@
 
     function render(dt) {
       renderer.render(scene, camera);
+	  effect.render(scene,camera);
     }
 
     function animate(t) {
